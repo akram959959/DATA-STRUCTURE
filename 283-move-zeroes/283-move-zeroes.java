@@ -1,4 +1,29 @@
-class Solution:
-    def moveZeroes(self, nums: List[int]) -> None:
-        for i in range(len(nums)):  
-            if nums[i] == 0:    nums.append(0) or nums.remove(0)
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int n =  nums.length;
+        
+        if(n == 0 || n == 1) return;
+        
+        int left = 0;
+        int right = 0;
+        
+        while(right < n){
+            if(nums[right] == 0)
+                right++;
+            else{
+                 int temp = nums[left];
+                nums[left] = nums[right];
+                nums[right] = temp;
+                left++;
+                right++;
+                
+            }
+                
+                
+        }
+    }
+}
+
+
+
+    
